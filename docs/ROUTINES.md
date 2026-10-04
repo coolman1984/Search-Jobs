@@ -11,6 +11,9 @@
 
 > أي مهمة مش لاقية حاجة تعملها بتقفل من غير ما تعمل commit ومن غير ما تفتح تذكرة.
 
+**اتعملوا يوم 2026-10-04:** `trig_01BeVHYXiBrJ442qYe24vqXd` (الصبح، أول تشغيل 5 أكتوبر 6:52 الصبح) · `trig_01MHUK64pE68EDDfsXMMWVbD` (الموافقات) · `trig_01GoCwSjWvenmAqhigsC8jie` (الأسبوع).
+⚠️ **المهام اتعملت من غير موصلات.** لازم تضيف Gmail وIndeed لكل مهمة من claude.ai/code ← Routines (الخطوات في `docs/SETUP.md` خطوة 5). من غيرهم، مهمة الصبح مش هتقدر تقرا Indeed ولا بريدك.
+
 ---
 
 ## 1) Search-Jobs · الصبح
@@ -24,6 +27,7 @@ SETUP
    missing). cd into it. git fetch origin ccr-29dce0fb-stx75b && git checkout ccr-29dce0fb-stx75b && git pull --ff-only.
 2. Read CLAUDE.md and follow its red rules for the whole run. export SEARCHJOBS_CONTEXT=scheduled
 3. python3 -m engine doctor   (note which sources are reachable and the privacy mode).
+   If the Indeed or Gmail tools are not available in this session, say so in the report and continue with the rest.
 
 COLLECT (official connectors only; never open or fetch LinkedIn, Upwork, Mostaql, Khamsat, Fiverr, Wuzzuf or Bayt pages)
 4. Indeed connector (mcp__Indeed__search_jobs). Run these searches and save each result as
@@ -32,10 +36,12 @@ COLLECT (official connectors only; never open or fetch LinkedIn, Upwork, Mostaql
    - "automation" Cairo EG · "AI transformation" Cairo EG · "finance automation" Cairo EG ·
      "business process automation" Cairo EG · "Power BI" Cairo EG
    - "automation" Riyadh SA · "AI" Dubai AE · "automation engineer" remote AE · "finance systems" Riyadh SA
+   Then, for the 8 most promising titles, call mcp__Indeed__get_job_details and save their full descriptions the same
+   way (inbox/indeed-details.json) so the engine can score them properly.
 5. Gmail (read only). mcp__Gmail__search_threads with
    "newer_than:2d (from:jobalerts-noreply@linkedin.com OR from:upwork.com OR from:mostaql.com OR from:khamsat.com
    OR from:freelancer.com OR from:wuzzuf.net OR from:bayt.com OR from:indeed.com)".
-   For each thread: mcp__Gmail__get_thread, write the plain-text body to /tmp/alert.txt, then
+   For each thread: mcp__Gmail__get_thread (PLAIN_TEXT), write the plain-text body to /tmp/alert.txt, then
    python3 -m engine parse-alert --sender "<sender>" --subject "<subject>" --body-file /tmp/alert.txt --delete-body
    Never copy an email body anywhere else.
 6. python3 -m engine gather     (engine collectors + inbox/ + merge + score + approvals check)
@@ -74,7 +80,7 @@ IDEA + REPORT
     "📋 فرص اليوم <YYYY-MM-DD> · <N> فرص · <M> مستنية موافقتك" with the body of reports/daily-<date>.md, label "daily-report".
     If the privacy mode is not "private": the issue must NOT contain drafts or contacts (the public part already
     excludes them). Also create ONE Gmail draft addressed to the owner himself (mflma1984@gmail.com), subject
-    "تفاصيل فرص اليوم <date>", body = private/daily-full-<date>.md. Close yesterday's daily-report issue.
+    "تفاصيل فرص اليوم <date>", body = private/daily-full-<date>.md as plain text. Close yesterday's daily-report issue.
 15. git add state/ reports/ logs/ IDEAS.md (and cards/ solutions/ only in private mode) ; never add approvals/,
     inbox/, private/, outbox/ or data/. Commit "Daily run <date>: <N> new, <M> drafted" and
     git pull --rebase origin ccr-29dce0fb-stx75b && git push origin ccr-29dce0fb-stx75b (retry with 2/4/8/16 s backoff
@@ -88,7 +94,7 @@ limit; write into approvals/; claim experience or results that are not in profil
 
 ```
 You are the approval check of Search-Jobs (coolman1984/Search-Jobs).
-1. /home/user/Search-Jobs (clone if missing); git fetch origin ccr-29dce0fb-stx75b; git checkout ccr-29dce0fb-stx75b;
+1. /home/user/Search-Jobs (clone https://github.com/coolman1984/Search-Jobs.git if missing); git fetch origin ccr-29dce0fb-stx75b; git checkout ccr-29dce0fb-stx75b;
    git pull --ff-only. Follow CLAUDE.md. export SEARCHJOBS_CONTEXT=scheduled
 2. python3 -m engine approvals
 3. If nothing was approved: stop here. No commit, no issue, no message.
@@ -106,7 +112,7 @@ NEVER send email, never write into approvals/, never submit on a platform.
 
 ```
 You are the weekly review of Search-Jobs (coolman1984/Search-Jobs).
-1. /home/user/Search-Jobs (clone if missing); checkout and pull ccr-29dce0fb-stx75b. Follow CLAUDE.md.
+1. /home/user/Search-Jobs (clone https://github.com/coolman1984/Search-Jobs.git if missing); checkout and pull ccr-29dce0fb-stx75b. Follow CLAUDE.md.
    export SEARCHJOBS_CONTEXT=scheduled
 2. python3 -m engine weekly   (market stats + learning; writes reports/weekly-<date>.md and config/learned.toml)
 3. Market report: with web search, check this week's demand and prices for the six services in profile/SERVICES.md
