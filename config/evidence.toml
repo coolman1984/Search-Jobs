@@ -1,0 +1,160 @@
+# The only evidence a draft may cite. Mirrors profile/PROFILE.md §4a (safe projects).
+# claims = exact phrases (and the numbers inside them) a draft is allowed to state.
+# A draft that names a project or a number not listed here is refused by the claims checker.
+
+[owner]
+claims = ["14+ years", "14 years", "+14", "14 سنة", "14 عامًا", "21,667", "21.6k", "21 ألف", "11 courses", "11 كورس"]
+allowed_projects = ["Delivery-Manager", "Teachers", "Accounting-sys", "Business-Template", "3D-Modeling",
+  "Seramic-Rondi", "Office-Automation", "Perfect-Project-Template", "Excel-Automation-V.2", "win-agent-desktop",
+  "Performance", "Economic", "Animation", "Personal-Web", "Excel-Data-Extractor", "Files_-_OCR"]
+
+[evidence.delivery]
+name_en = "multi-company delivery platform"
+name_ar = "منصة توصيل لأكتر من شركة"
+repo = "Delivery-Manager"
+services = ["business_system"]
+segments = ["logistics", "restaurants", "ecommerce"]
+claims = ["107 tests", "~107", "daily settlement", "تسوية يومية"]
+line_en = "I built a delivery platform where each company's data is isolated, with customer, store, rider and operations screens and a daily cash settlement."
+line_ar = "بنيت منصة توصيل لكذا شركة، كل شركة بياناتها معزولة، وفيها شاشات للعميل والمحل والطيار والتشغيل، وتسوية يومية للتحصيل."
+
+[evidence.hessa]
+name_en = "education-centre system (in development)"
+name_ar = "نظام «حصة» للسناتر (تحت التطوير)"
+repo = "Teachers"
+services = ["business_system"]
+segments = ["education"]
+claims = []
+line_en = "I am building an education-centre system where the door desk collects fees with receipts that cannot be edited, and parents follow attendance through a private link without an app."
+line_ar = "ببني نظام للسناتر، السكرتارية فيه بتحصّل بإيصالات مستحيل تتعدل، وولي الأمر بيتابع الحضور من لينك خاص من غير تطبيق."
+
+[evidence.mizan]
+name_en = "Mizan bilingual double-entry accounting system"
+name_ar = "نظام «ميزان» للمحاسبة بالقيد المزدوج"
+repo = "Accounting-sys"
+services = ["business_system", "dashboards"]
+segments = ["accounting", "factory"]
+claims = ["220 tests", "~220"]
+line_en = "I built Mizan, a bilingual double-entry accounting system with stock and costing that runs on the company's own network."
+line_ar = "بنيت «ميزان»، نظام محاسبة بالقيد المزدوج بالعربي والإنجليزي، فيه مخازن وتكاليف، وبيشتغل على شبكة الشركة."
+
+[evidence.business_template]
+name_en = "business-systems factory"
+name_ar = "مصنع أنظمة الأعمال"
+repo = "Business-Template"
+services = ["business_system"]
+segments = ["other"]
+claims = ["170 tests", "~170"]
+line_en = "I maintain a tested core that generates a complete business system from one profile file, so a new client starts from working software."
+line_ar = "عندي نواة مجرّبة بتولّد نظام كامل لأي شركة من ملف تعريف واحد، فالعميل الجديد بيبدأ من برنامج شغال."
+
+[evidence.space_planner]
+name_en = "2D/3D space planner"
+name_ar = "مخطط المساحات ثنائي وثلاثي الأبعاد"
+repo = "3D-Modeling"
+services = ["business_system"]
+segments = ["factory", "logistics"]
+claims = ["440 tests", "~440"]
+line_en = "I built a 2D/3D space planner that checks whether equipment and shipments fit before money is spent."
+line_ar = "بنيت مخطط مساحات ثنائي وثلاثي الأبعاد، بيتأكد إن المعدات والشحنات هتدخل قبل ما تصرف أي فلوس."
+
+[evidence.ceramic]
+name_en = "ceramic factory management system (phase 1 done)"
+name_ar = "نظام إدارة مصنع سيراميك (المرحلة الأولى خلصت)"
+repo = "Seramic-Rondi"
+services = ["business_system"]
+segments = ["factory"]
+claims = []
+line_en = "I am building an Arabic-first factory system that links production, quality, stores, energy, sales and costing; the master-data phase is complete."
+line_ar = "ببني نظام مصنع بالعربي بيربط الإنتاج والجودة والمخازن والطاقة والمبيعات والتكلفة، ومرحلة البيانات الأساسية خلصت."
+
+[evidence.xl2ai]
+name_en = "xl2ai (Excel to verified database for AI)"
+name_ar = "xl2ai (من الإكسل لقاعدة بيانات موثقة للذكاء الاصطناعي)"
+repo = "Office-Automation"
+services = ["excel_automation", "dashboards", "ai_agents"]
+segments = ["accounting", "factory", "gulf", "remote_global"]
+claims = ["1M rows", "1M-row", "55 s", "55 seconds", "مليون صف", "55 ثانية", "57 MB", "300 tests", "~300"]
+line_en = "I built xl2ai, which turns large Excel files into a verified database and KPIs; a 1M-row file is extracted and fully verified in about 55 seconds."
+line_ar = "بنيت xl2ai، اللي بيحوّل ملفات الإكسل الكبيرة لقاعدة بيانات متحقق منها ومؤشرات؛ ملف مليون صف بيتسحب ويتراجع بالكامل في حوالي 55 ثانية."
+
+[evidence.excel_engine]
+name_en = "universal Excel automation engine"
+name_ar = "محرك أتمتة الإكسل الشامل"
+repo = "Perfect-Project-Template"
+services = ["excel_automation"]
+segments = ["accounting", "factory", "gulf", "remote_global"]
+claims = ["450+ tests", "450+", "+450", "450 اختبار"]
+line_en = "I built a reusable Excel automation engine with 450+ automated tests; each department receives a tool it runs by double-clicking START."
+line_ar = "بنيت محرك أتمتة إكسل فيه أكتر من 450 اختبار آلي؛ كل قسم بياخد أداة بيشغلها بضغطة START."
+
+[evidence.wad]
+name_en = "wad, Windows automation for AI agents"
+name_ar = "wad، أتمتة ويندوز لوكلاء الذكاء الاصطناعي"
+repo = "win-agent-desktop"
+services = ["ai_agents"]
+segments = ["remote_global", "gulf"]
+claims = []
+line_en = "I built wad, which lets AI agents operate Windows applications through the accessibility tree and proves that every action worked."
+line_ar = "بنيت wad، اللي بيخلّي وكلاء الذكاء الاصطناعي يشغّلوا برامج ويندوز عن طريق شجرة الوصول، وبيثبت إن كل خطوة اتنفذت."
+
+[evidence.winsight]
+name_en = "WinSight, Windows diagnostics with an MCP server"
+name_ar = "WinSight، تشخيص ويندوز مع خادم MCP"
+repo = "Performance"
+services = ["ai_agents"]
+segments = ["remote_global"]
+claims = ["34 tools", "34 أداة", "5 MB"]
+line_en = "I built WinSight, a single 5 MB tool with 34 reversible diagnostics that AI agents can call through MCP."
+line_ar = "بنيت WinSight، أداة واحدة حجمها 5 ميجا فيها 34 فحص وإصلاح ينفع يترجعوا، والوكلاء بيستخدموها عن طريق MCP."
+
+[evidence.film_studio]
+name_en = "code-driven film studio"
+name_ar = "استوديو أفلام بالكود"
+repo = "Animation"
+services = ["motion_video"]
+segments = ["creators", "ecommerce", "clinic", "education"]
+claims = []
+line_en = "I make motion-graphics ads in code, with an original score and automated checks for loudness and safe text areas."
+line_ar = "بعمل إعلانات موشن جرافيك بالكود، بموسيقى أصلية، وفيه فحص آلي لمستوى الصوت ولمنطقة الكتابة الآمنة."
+
+[evidence.training]
+name_en = "Arabic AI curriculum (11 courses)"
+name_ar = "منهج ذكاء اصطناعي بالعربي (11 كورس)"
+repo = "Personal-Web"
+services = ["training"]
+segments = ["ai_training", "gulf"]
+claims = ["11 courses", "11 كورس"]
+line_en = "I teach practical AI at work and wrote an 11-course Arabic curriculum."
+line_ar = "بدرّب على الذكاء الاصطناعي العملي في الشغل، وكتبت منهج بالعربي من 11 كورس."
+
+# Service detection keywords -> service id (profile/SERVICES.md) and price bands per region.
+[services.business_system]
+keywords = ["system", "platform", "booking", "crm", "portal", "management", "app", "نظام", "منصة", "حجز", "برنامج"]
+price = { EG = "15,000–60,000 EGP + 500–1,500 EGP/month", GULF = "6,000–20,000 SAR", GLOBAL = "USD 1,500–6,000" }
+duration = "2–6 weeks"
+
+[services.excel_automation]
+keywords = ["excel", "vba", "spreadsheet", "report", "office", "إكسل", "اكسل", "تقرير"]
+price = { EG = "3,000–20,000 EGP", GULF = "1,500–8,000 SAR", GLOBAL = "USD 300–2,500 or USD 30–60/h" }
+duration = "3 days–2 weeks"
+
+[services.ai_agents]
+keywords = ["ai", "agent", "llm", "automation", "workflow", "n8n", "zapier", "gpt", "أتمتة", "ذكاء"]
+price = { EG = "10,000–50,000 EGP", GULF = "4,000–20,000 SAR", GLOBAL = "USD 40–85/h or USD 1,000–6,000" }
+duration = "1–4 weeks"
+
+[services.dashboards]
+keywords = ["dashboard", "power bi", "analytics", "kpi", "data analysis", "لوحة", "تحليل"]
+price = { EG = "8,000–35,000 EGP", GULF = "3,000–15,000 SAR", GLOBAL = "USD 800–4,000" }
+duration = "1–3 weeks"
+
+[services.motion_video]
+keywords = ["motion", "video", "animation", "explainer", "reels", "ad", "موشن", "فيديو", "إعلان"]
+price = { EG = "4,000–12,000 EGP per 30 s", GULF = "1,500–5,000 SAR", GLOBAL = "USD 600–2,000 per 30 s" }
+duration = "3–7 days"
+
+[services.training]
+keywords = ["training", "workshop", "course", "trainer", "تدريب", "ورشة", "كورس"]
+price = { EG = "to be confirmed", GULF = "AED 8,000–15,000 half day · AED 15,000–30,000 full day", GLOBAL = "EUR 1,500–3,500 per day" }
+duration = "half day – 8 sessions"

@@ -1,0 +1,44 @@
+{
+ "approval": null,
+ "budget_max": null,
+ "budget_min": null,
+ "contact": null,
+ "created_at": "2026-10-04T16:21:46+00:00",
+ "currency": null,
+ "description": "",
+ "draft": null,
+ "draft_hash": null,
+ "enrichment": null,
+ "events": [
+  {
+   "data": "{\"track\": \"job\"}",
+   "kind": "created",
+   "ts": "2026-10-04T16:21:46+00:00"
+  }
+ ],
+ "fingerprint": "7ff6b53b97d64775102a7a0dc5f27341b3897386",
+ "id": "J-7ff6b53b97",
+ "language": "en",
+ "location": "Cairo",
+ "org": "Luxoft",
+ "posted_at": "2026-09-14",
+ "reject_reason": null,
+ "remote": 0,
+ "score": 38.0,
+ "score_breakdown": "{\"skills_fit\": 5.0, \"budget\": 7.0, \"seriousness\": 6.0, \"competition\": 6.0, \"speed\": 6.0, \"evidence_value\": 8.0}",
+ "score_reason": "قوية في قلة المنافسة وسرعة الإنجاز، وأضعف نقطة التوافق مع مهاراتك؛ الشريحة: عام.",
+ "segment": "other",
+ "service": "ai_agents",
+ "sightings": [
+  {
+   "seen_at": "2026-10-04T16:21:46+00:00",
+   "source": "indeed",
+   "source_url": "https://to.indeed.com/aazwqbxyccgk"
+  }
+ ],
+ "status": "new",
+ "title": "Python Engineer with AI",
+ "track": "job",
+ "updated_at": "2026-10-04T16:25:13+00:00",
+ "url": "https://to.indeed.com/aazwqbxyccgk"
+}

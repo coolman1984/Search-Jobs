@@ -1,0 +1,54 @@
+{
+ "approval": null,
+ "budget_max": null,
+ "budget_min": null,
+ "contact": null,
+ "created_at": "2026-10-04T16:21:46+00:00",
+ "currency": null,
+ "description": "Lead the introduction and adoption of agentic AI across the group: enterprise AI solutions improving productivity, automation and decision-making across industrial, manufacturing, finance, HR, procurement, supply chain, sales and customer service. Build assistants, copilots and agents with Microsoft Copilot Studio, Azure OpenAI, the Anthropic Claude ecosystem and LLM orchestration. Data lake and AI-ready architecture integrating ERP, CRM, manufacturing and IoT. Identify and prioritise AI use cases with measurable ROI. AI governance and responsible AI. Run AI innovation workshops and enable users. Support executive AI strategy. 3+ years in AI/ML engineering, enterprise automation or digital transformation; Python, REST APIs, RAG, agents; manufacturing experience highly preferred.",
+ "draft": null,
+ "draft_hash": "c343055bda7b2762dbb037ad2b9d8deb47625b8d93d71ac99e611aca10a34724",
+ "enrichment": null,
+ "events": [
+  {
+   "data": "{\"track\": \"job\"}",
+   "kind": "created",
+   "ts": "2026-10-04T16:21:46+00:00"
+  },
+  {
+   "data": "{\"from\": \"new\", \"to\": \"studied\", \"note\": \"enriched\"}",
+   "kind": "status",
+   "ts": "2026-10-04T16:24:38+00:00"
+  },
+  {
+   "data": "{\"from\": \"studied\", \"to\": \"awaiting_approval\", \"note\": \"draft c343055bda7b\"}",
+   "kind": "status",
+   "ts": "2026-10-04T16:24:38+00:00"
+  }
+ ],
+ "fingerprint": "6ef4da0217dc9fa7e15d0b89afb93424ed56bb10",
+ "id": "J-6ef4da0217",
+ "language": "en",
+ "location": "Dubai, UAE",
+ "org": "Naffco",
+ "posted_at": "2026-06-01",
+ "reject_reason": null,
+ "remote": 0,
+ "score": 75.5,
+ "score_breakdown": "{\"skills_fit\": 30.0, \"budget\": 7.0, \"seriousness\": 10.5, \"competition\": 6.0, \"speed\": 6.0, \"evidence_value\": 16.0}",
+ "score_reason": "قوية في التوافق مع مهاراتك وقيمة الدليل/ملاءمة الدور (أتمتة، وكلاء ذكاء اصطناعي، مالية، أنظمة إدارة، بايثون)، وأضعف نقطة الميزانية؛ الشريحة: مصانع.",
+ "segment": "factory",
+ "service": "ai_agents",
+ "sightings": [
+  {
+   "seen_at": "2026-10-04T16:21:46+00:00",
+   "source": "indeed",
+   "source_url": "https://to.indeed.com/aadxjfqz8yrb"
+  }
+ ],
+ "status": "awaiting_approval",
+ "title": "AI Engineer – Agentic AI & Enterprise Automation",
+ "track": "job",
+ "updated_at": "2026-10-04T16:25:14+00:00",
+ "url": "https://to.indeed.com/aadxjfqz8yrb"
+}

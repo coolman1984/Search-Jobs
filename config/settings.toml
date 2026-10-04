@@ -1,0 +1,43 @@
+# Search-Jobs settings. Plain text on purpose: the owner (or Claude on his behalf) edits values here,
+# never inside the code. Every value below is a safe default recorded in DEVELOPMENT_HISTORY.md.
+
+[owner]
+name = "Mohamed Fawzy Labib"
+github_login = "coolman1984"
+# Author identities GitHub uses when the owner commits from the website or the mobile app.
+author_emails = ["54982309+coolman1984@users.noreply.github.com", "mflma1984@gmail.com"]
+hours_per_week = 15
+min_project_egp = 5000
+min_project_usd = 300
+languages = ["ar", "en"]
+# Countries where an on-site/hybrid job is acceptable (ISO codes). Remote is always acceptable.
+job_countries = ["EG", "SA", "AE", "QA", "KW", "BH", "OM"]
+
+[repository]
+owner = "coolman1984"
+name = "Search-Jobs"
+# Branch the owner's approval commits land on (the repository's default branch).
+approval_branch = "ccr-29dce0fb-stx75b"
+# "auto" asks GitHub whether the repository is private; anything that fails counts as public.
+# "public" forces the safe mode. "private" is only honoured when GitHub confirms it.
+visibility = "auto"
+
+[approval]
+# GitHub signs commits made on github.com (web and mobile) with these keys ("web-flow").
+# Public keys live in config/keys/. An approval is valid only inside a commit signed by one of them.
+trusted_fingerprints = [
+  "968479A1AFF927E37D1A566BB5690EEEBB952194",  # GitHub web-flow, 2024-01-16 onwards
+  "5DE3E0509C47EA3CF04A42D34AEE18F83AFDEB23",  # GitHub web-flow, 2017-2024 (expired, old commits only)
+]
+committer_email = "noreply@github.com"
+
+[limits]
+top_per_day = 5             # opportunities that get a full card and draft each morning
+min_top_score = 55          # below this, an opportunity is listed but not drafted
+direct_outreach_per_day = 2 # cold messages to companies, hard ceiling
+followup_after_days = 4     # remind the owner to follow up after this many days without a reply
+keep_days = 120             # opportunities older than this with no action are archived
+
+[http]
+user_agent = "SearchJobs/1.0 (personal job search; +https://github.com/coolman1984/Search-Jobs)"
+timeout_seconds = 25

@@ -10,3 +10,5 @@ __pycache__/
 *.pyc
 .venv/
 profile/PRIVATE_NOTES.md
+private/
+outbox/

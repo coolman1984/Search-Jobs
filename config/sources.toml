@@ -1,0 +1,186 @@
+# Source register in machine form. Colours and reasons: sources/SOURCES.md.
+# color: green = official API/RSS/connector; yellow = public page, slow and limited; red = never automated.
+# The engine refuses to fetch from any source whose colour is red, and from any URL not listed here.
+
+[remotive]
+color = "green"
+kind = "api"
+url = "https://remotive.com/api/remote-jobs?limit=100"
+max_requests_per_day = 2        # Remotive asks for at most 4 a day
+min_interval_seconds = 60
+attribution = "Remotive"
+tracks = ["job", "freelance"]
+
+[remoteok]
+color = "green"
+kind = "api"
+url = "https://remoteok.com/api"
+max_requests_per_day = 1
+min_interval_seconds = 60
+attribution = "Remote OK"
+tracks = ["job", "freelance"]
+
+[himalayas]
+color = "green"
+kind = "api"
+url = "https://himalayas.app/jobs/api?limit=100"
+max_requests_per_day = 2
+min_interval_seconds = 30
+attribution = "Himalayas"
+tracks = ["job"]
+
+[arbeitnow]
+color = "green"
+kind = "api"
+url = "https://www.arbeitnow.com/api/job-board-api"
+max_requests_per_day = 2
+min_interval_seconds = 30
+attribution = "Arbeitnow"
+tracks = ["job"]
+
+[jobicy]
+color = "green"
+kind = "api"
+url = "https://jobicy.com/api/v2/remote-jobs?count=50"
+max_requests_per_day = 2
+min_interval_seconds = 30
+attribution = "Jobicy"
+tracks = ["job"]
+
+[weworkremotely]
+color = "green"
+kind = "rss"
+urls = [
+  "https://weworkremotely.com/categories/remote-programming-jobs.rss",
+  "https://weworkremotely.com/categories/remote-management-and-finance-jobs.rss",
+]
+max_requests_per_day = 4
+min_interval_seconds = 20
+attribution = "We Work Remotely"
+tracks = ["job", "freelance"]
+
+[hn_whoishiring]
+color = "green"
+kind = "api"
+url = "https://hn.algolia.com/api/v1"
+max_requests_per_day = 6
+min_interval_seconds = 5
+attribution = "Hacker News"
+tracks = ["job", "freelance"]
+
+[greenhouse]
+color = "green"
+kind = "api"
+url = "https://boards-api.greenhouse.io/v1/boards/{board}/jobs?content=true"
+boards = []                     # company board tokens the owner wants watched, e.g. ["gitlab"]
+max_requests_per_day = 20
+min_interval_seconds = 5
+attribution = "Greenhouse"
+tracks = ["job"]
+
+[lever]
+color = "green"
+kind = "api"
+url = "https://api.lever.co/v0/postings/{company}?mode=json"
+companies = []
+max_requests_per_day = 20
+min_interval_seconds = 5
+attribution = "Lever"
+tracks = ["job"]
+
+[osm]
+color = "green"
+kind = "api"
+url = "https://overpass-api.de/api/interpreter"
+max_requests_per_day = 6
+min_interval_seconds = 60
+attribution = "© OpenStreetMap contributors (ODbL)"
+tracks = ["direct"]
+# Overpass area names and OSM tags to look for. Direct outreach is disabled while the repository is public.
+areas = ["Cairo Governorate", "Giza Governorate"]
+tags = ["amenity=clinic", "office=accountant", "office=logistics", "amenity=college"]
+
+[company_site]
+color = "yellow"
+kind = "page"
+max_requests_per_day = 50
+min_interval_seconds = 10
+max_pages_per_site = 3
+attribution = "company website"
+tracks = ["direct", "job"]
+
+# Connector sources: the agent calls the official connector and drops the result in inbox/.
+[indeed]
+color = "green"
+kind = "connector"
+attribution = "Indeed"
+tracks = ["job"]
+
+[gmail_alerts]
+color = "green"
+kind = "connector"
+attribution = "email alert"
+tracks = ["job", "freelance"]
+
+[github_issues]
+color = "green"
+kind = "connector"
+attribution = "GitHub"
+tracks = ["freelance"]
+
+[web_search]
+color = "green"
+kind = "connector"
+attribution = "web search"
+tracks = ["job", "freelance", "direct"]
+
+# Red: listed so that the engine can refuse them by name. Never fetched, never posted to.
+[linkedin]
+color = "red"
+kind = "platform"
+domains = ["linkedin.com"]
+
+[upwork]
+color = "red"
+kind = "platform"
+domains = ["upwork.com"]
+
+[fiverr]
+color = "red"
+kind = "platform"
+domains = ["fiverr.com"]
+
+[mostaql]
+color = "red"
+kind = "platform"
+domains = ["mostaql.com"]
+
+[khamsat]
+color = "red"
+kind = "platform"
+domains = ["khamsat.com"]
+
+[indeed_site]
+color = "red"
+kind = "platform"
+domains = ["indeed.com"]
+
+[wuzzuf]
+color = "red"
+kind = "platform"
+domains = ["wuzzuf.net"]
+
+[bayt]
+color = "red"
+kind = "platform"
+domains = ["bayt.com", "naukrigulf.com", "glassdoor.com"]
+
+[social]
+color = "red"
+kind = "platform"
+domains = ["facebook.com", "instagram.com", "whatsapp.com", "x.com", "twitter.com", "tiktok.com"]
+
+[unreviewed_freelance]
+color = "red"
+kind = "platform"
+domains = ["freelancer.com", "nafezly.com", "ureed.com", "peopleperhour.com", "guru.com"]

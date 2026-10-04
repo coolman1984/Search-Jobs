@@ -1,0 +1,120 @@
+# Scoring rules (0-100). Edit freely: weights, keywords, thresholds. The engine explains each score in one sentence.
+# Points per criterion are the maximum that criterion can contribute; the six maxima add up to 100.
+
+[weights]
+skills_fit = 30
+budget = 15
+seriousness = 15
+competition = 10
+speed = 10
+evidence_value = 20
+
+# Skill groups: a hit in the opportunity text counts once per group. Strong groups count double.
+[skills.strong]
+excel_automation = ["excel", "vba", "spreadsheet", "power query", "xlsx", "إكسل", "اكسل", "شيت"]
+process_automation = ["automation", "automate", "workflow", "rpa", "n8n", "zapier", "make.com", "أتمتة", "اتمتة"]
+ai_agents = ["ai agent", "agents", "llm", "gpt", "claude", "openai", "mcp", "chatbot", "وكيل ذكاء", "ذكاء اصطناعي"]
+finance = ["finance", "fp&a", "cost control", "costing", "controlling", "accounting", "erp", "sap", "budget", "مالي", "محاسب", "تكاليف"]
+business_system = ["management system", "booking", "crm", "inventory", "dashboard", "portal", "نظام إدارة", "حجز", "مخازن"]
+
+[skills.normal]
+python = ["python", "django", "fastapi", "flask", "pandas"]
+web = ["typescript", "javascript", "react", "node", "next.js", "sqlite", "postgres"]
+data = ["power bi", "data analysis", "analytics", "reporting", "kpi", "bi ", "sql", "تحليل بيانات", "تقارير"]
+motion = ["motion graphics", "explainer", "animation", "video ad", "reels", "موشن", "فيديو إعلاني", "انيميشن"]
+manufacturing = ["manufacturing", "factory", "supply chain", "mes", "production", "مصنع", "تصنيع", "إنتاج"]
+training = ["training", "workshop", "trainer", "enablement", "تدريب", "ورشة"]
+arabic = ["arabic", "عربي", "العربية"]
+
+[budget]
+# Freelance/direct: minimum acceptable budget in USD; jobs use salary when published.
+min_usd = 300
+good_usd = 1500
+unknown_points = 7      # out of 15 when no budget is published
+
+[seriousness]
+min_description_chars = 300
+fresh_days = 7
+
+[competition]
+# Points by source family (10 = little competition). Unknown sources get 5.
+direct = 10
+greenhouse = 7
+lever = 7
+indeed = 6
+gmail_alerts = 5
+hn_whoishiring = 5
+himalayas = 4
+arbeitnow = 4
+jobicy = 4
+remotive = 3
+remoteok = 3
+weworkremotely = 3
+
+[speed]
+quick_words = ["script", "small", "quick", "fix", "one-time", "automation of", "dashboard", "template", "سريع", "بسيط"]
+slow_words = ["full erp", "long-term", "6 months", "12 months", "team of", "end-to-end platform", "مشروع كبير"]
+
+[red_flags]
+# Any hit rejects the opportunity with this reason.
+words = ["unpaid", "free test", "free trial task", "equity only", "commission only", "crypto casino", "gambling",
+         "betting", "adult", "scrape linkedin", "linkedin automation", "fake reviews", "bypass captcha",
+         "mlm", "بدون مقابل", "تجربة مجانية للمهمة", "مراهنات"]
+
+[thresholds]
+top = 55
+reject_below = 20
+
+# Segment detection (keywords) -> segment id used by market/SEGMENTS.md and learning.
+[segments]
+factory = ["factory", "manufactur", "plant", "production line", "مصنع", "تصنيع"]
+ai_training = ["training", "workshop", "upskill", "enablement", "تدريب", "ورشة"]
+gulf = ["saudi", "riyadh", "jeddah", "uae", "dubai", "abu dhabi", "qatar", "doha", "kuwait", "bahrain", "oman", "السعودية", "الرياض", "الإمارات", "دبي", "قطر", "الكويت"]
+logistics = ["logistics", "delivery", "fleet", "transport", "shipping", "courier", "توصيل", "شحن", "نقل"]
+accounting = ["accounting firm", "bookkeeping", "audit firm", "tax", "accountant", "مكتب محاسبة", "محاسب"]
+education = ["education center", "tutoring", "school", "academy", "lms", "سنتر", "تعليم", "أكاديمية"]
+clinic = ["clinic", "medical", "dental", "hospital", "patient", "عيادة", "طبي", "مستشفى"]
+real_estate = ["real estate", "property", "brokerage", "عقار"]
+creators = ["youtube", "creator", "brand", "influencer", "content", "صانع محتوى", "براند"]
+ecommerce = ["shopify", "woocommerce", "e-commerce", "ecommerce", "online store", "متجر"]
+restaurants = ["restaurant", "cafe", "café", "food delivery app", "مطعم", "كافيه"]
+remote_global = ["remote", "worldwide", "anywhere"]
+
+# Segment rank from market/SEGMENTS.md, used for evidence_value (higher = more valuable proof to earn).
+[segment_points]
+factory = 20
+ai_training = 17
+gulf = 16
+logistics = 14
+accounting = 14
+education = 13
+remote_global = 12
+clinic = 10
+real_estate = 7
+creators = 7
+ecommerce = 6
+restaurants = 4
+other = 8
+
+# Jobs track: how well the role fits the owner's next career step (replaces segment points for jobs).
+[jobs]
+junior_words = ["intern", "internship", "junior", "entry level", "entry-level", "graduate", "trainee", "student", "متدرب"]
+senior_words = ["senior", "lead", "manager", "head", "director", "principal", "chief", "vp", "مدير", "رئيس"]
+# Salary expectations for jobs (USD per month). Published salaries are monthly unless above yearly_threshold.
+min_monthly_usd = 4000      # about AED 15,000 / SAR 15,000
+good_monthly_usd = 8000     # about AED 30,000
+yearly_threshold_usd = 25000
+# Must-have requirements the owner does not have: a hit inside a "must/required/years of" sentence costs points.
+gap_words = ["dynamics 365", "d365", "netsuite", "salesforce", "flexible packaging", "java ", "kubernetes",
+             "phd", "cpa ", "nursing", "dha licen", "arabic native from the gulf"]
+gap_penalty = 12
+# Roles reserved by nationality cannot be applied to: rejected with a clear reason.
+restricted_words = ["saudi nationals", "for saudi nationals", "saudi national only", "uae nationals", "emirati nationals",
+                    "qatari nationals", "kuwaiti nationals", "nationals only", "للسعوديين فقط", "للمواطنين فقط"]
+
+[jobs.target_roles]
+transformation = ["transformation", "change", "adoption", "enablement", "تحول"]
+automation = ["automation", "rpa", "process", "workflow", "أتمتة"]
+ai = ["ai ", "ai,", "artificial intelligence", "agentic", "genai", "llm", "machine learning", "ذكاء اصطناعي"]
+finance_systems = ["fp&a", "erp", "finance systems", "controlling", "controller", "business partner", "budgeting", "cost", "sap", "netsuite"]
+data = ["bi ", "power bi", "analytics", "reporting", "data"]

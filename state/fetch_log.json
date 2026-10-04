@@ -1,0 +1,51 @@
+[
+ {
+  "source": "remotive",
+  "ts": "2026-10-04T16:21:44+00:00",
+  "url": "https://remotive.com/api/remote-jobs?limit=100",
+  "status": "network-error",
+  "items": 0
+ },
+ {
+  "source": "remoteok",
+  "ts": "2026-10-04T16:21:44+00:00",
+  "url": "https://remoteok.com/api",
+  "status": "network-error",
+  "items": 0
+ },
+ {
+  "source": "himalayas",
+  "ts": "2026-10-04T16:21:44+00:00",
+  "url": "https://himalayas.app/jobs/api?limit=100",
+  "status": "network-error",
+  "items": 0
+ },
+ {
+  "source": "arbeitnow",
+  "ts": "2026-10-04T16:21:45+00:00",
+  "url": "https://www.arbeitnow.com/api/job-board-api",
+  "status": "network-error",
+  "items": 0
+ },
+ {
+  "source": "jobicy",
+  "ts": "2026-10-04T16:21:45+00:00",
+  "url": "https://jobicy.com/api/v2/remote-jobs?count=50",
+  "status": "network-error",
+  "items": 0
+ },
+ {
+  "source": "weworkremotely",
+  "ts": "2026-10-04T16:21:45+00:00",
+  "url": "https://weworkremotely.com/categories/remote-programming-jobs.rss",
+  "status": "network-error",
+  "items": 0
+ },
+ {
+  "source": "hn_whoishiring",
+  "ts": "2026-10-04T16:21:46+00:00",
+  "url": "https://hn.algolia.com/api/v1/search_by_date?tags=story,author_whoishiring&hitsPerPage=5",
+  "status": "network-error",
+  "items": 0
+ }
+]

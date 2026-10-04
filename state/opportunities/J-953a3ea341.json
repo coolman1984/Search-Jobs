@@ -1,0 +1,44 @@
+{
+ "approval": null,
+ "budget_max": null,
+ "budget_min": null,
+ "contact": null,
+ "created_at": "2026-10-04T16:21:46+00:00",
+ "currency": null,
+ "description": "",
+ "draft": null,
+ "draft_hash": null,
+ "enrichment": null,
+ "events": [
+  {
+   "data": "{\"track\": \"job\"}",
+   "kind": "created",
+   "ts": "2026-10-04T16:21:46+00:00"
+  }
+ ],
+ "fingerprint": "953a3ea3417f66c991fa1af3714a619af749b19e",
+ "id": "J-953a3ea341",
+ "language": "en",
+ "location": "Riyadh, Saudi Arabia",
+ "org": "MASTER-WORKS",
+ "posted_at": "2026-09-10",
+ "reject_reason": null,
+ "remote": 0,
+ "score": 39.0,
+ "score_breakdown": "{\"skills_fit\": 10.0, \"budget\": 7.0, \"seriousness\": 6.0, \"competition\": 6.0, \"speed\": 6.0, \"evidence_value\": 4.0}",
+ "score_reason": "قوية في قلة المنافسة وسرعة الإنجاز، وأضعف نقطة قيمة الدليل/ملاءمة الدور؛ الشريحة: الخليج.",
+ "segment": "gulf",
+ "service": "business_system",
+ "sightings": [
+  {
+   "seen_at": "2026-10-04T16:21:46+00:00",
+   "source": "indeed",
+   "source_url": "https://to.indeed.com/aa97f8j78yj6"
+  }
+ ],
+ "status": "new",
+ "title": "Finance Technical Support, Analyst",
+ "track": "job",
+ "updated_at": "2026-10-04T16:25:14+00:00",
+ "url": "https://to.indeed.com/aa97f8j78yj6"
+}

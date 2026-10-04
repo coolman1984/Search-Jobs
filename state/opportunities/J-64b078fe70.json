@@ -1,0 +1,44 @@
+{
+ "approval": null,
+ "budget_max": 10000.0,
+ "budget_min": null,
+ "contact": null,
+ "created_at": "2026-10-04T16:21:46+00:00",
+ "currency": "AED",
+ "description": "Build AI customer automation for an aesthetic clinic: WhatsApp, website, email and social media enquiries, lead qualification, appointment booking and reminders, follow-ups and feedback; integrate with CRM and appointment systems; n8n, Make or Zapier; APIs and webhooks. 2-5 years hands-on. Up to AED 10,000 per month. In person.",
+ "draft": null,
+ "draft_hash": null,
+ "enrichment": null,
+ "events": [
+  {
+   "data": "{\"track\": \"job\"}",
+   "kind": "created",
+   "ts": "2026-10-04T16:21:46+00:00"
+  }
+ ],
+ "fingerprint": "64b078fe701871192c0d8bb87db1aa369e83c77e",
+ "id": "J-64b078fe70",
+ "language": "en",
+ "location": "Dubai, UAE",
+ "org": "DERMAZONE LASER AND COSMETIC CENTER",
+ "posted_at": "2026-09-28",
+ "reject_reason": null,
+ "remote": 0,
+ "score": 73.0,
+ "score_breakdown": "{\"skills_fit\": 30.0, \"budget\": 0.0, \"seriousness\": 15.0, \"competition\": 6.0, \"speed\": 6.0, \"evidence_value\": 16.0}",
+ "score_reason": "قوية في التوافق مع مهاراتك والجدية (أتمتة، مالية، أنظمة إدارة)، وأضعف نقطة الميزانية؛ الشريحة: الخليج.",
+ "segment": "gulf",
+ "service": "ai_agents",
+ "sightings": [
+  {
+   "seen_at": "2026-10-04T16:21:46+00:00",
+   "source": "indeed",
+   "source_url": "https://to.indeed.com/aafxs2gt7vhz"
+  }
+ ],
+ "status": "new",
+ "title": "AI Automation Specialist",
+ "track": "job",
+ "updated_at": "2026-10-04T16:25:14+00:00",
+ "url": "https://to.indeed.com/aafxs2gt7vhz"
+}

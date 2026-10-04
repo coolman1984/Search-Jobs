@@ -1,0 +1,44 @@
+{
+ "approval": null,
+ "budget_max": null,
+ "budget_min": null,
+ "contact": null,
+ "created_at": "2026-10-04T16:21:46+00:00",
+ "currency": null,
+ "description": "From a linkedin alert email (job alerts: Management / FP&A in Riyadh and Egypt)",
+ "draft": null,
+ "draft_hash": null,
+ "enrichment": null,
+ "events": [
+  {
+   "data": "{\"track\": \"job\"}",
+   "kind": "created",
+   "ts": "2026-10-04T16:21:46+00:00"
+  }
+ ],
+ "fingerprint": "c83b4c97f6bf3b4cb18419e181b60a7958c783b7",
+ "id": "J-c83b4c97f6",
+ "language": "en",
+ "location": "Riyadh Region, Saudi Arabia",
+ "org": "Siemens",
+ "posted_at": null,
+ "reject_reason": null,
+ "remote": 0,
+ "score": 40.5,
+ "score_breakdown": "{\"skills_fit\": 10.0, \"budget\": 7.0, \"seriousness\": 4.5, \"competition\": 5.0, \"speed\": 6.0, \"evidence_value\": 8.0}",
+ "score_reason": "قوية في سرعة الإنجاز وقلة المنافسة، وأضعف نقطة الجدية؛ الشريحة: الخليج.",
+ "segment": "gulf",
+ "service": "business_system",
+ "sightings": [
+  {
+   "seen_at": "2026-10-04T16:21:46+00:00",
+   "source": "gmail_alerts",
+   "source_url": "https://www.linkedin.com/comm/jobs/view/4464567320"
+  }
+ ],
+ "status": "new",
+ "title": "Business Unit Performance Controller - Saudi Arabia/Riyadh",
+ "track": "job",
+ "updated_at": "2026-10-04T16:25:13+00:00",
+ "url": "https://www.linkedin.com/comm/jobs/view/4464567320"
+}

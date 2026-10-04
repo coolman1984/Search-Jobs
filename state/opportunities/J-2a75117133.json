@@ -1,0 +1,44 @@
+{
+ "approval": null,
+ "budget_max": 15000.0,
+ "budget_min": 7000.0,
+ "contact": null,
+ "created_at": "2026-10-04T16:21:46+00:00",
+ "currency": "AED",
+ "description": "Drive end-to-end process transformation across business functions: analyse, standardise and automate workflows with ERP and AI-enabled solutions. Flexible packaging industry experience is a must. Lead automation initiatives using ERP systems, AI tools and workflow platforms; automate Statement of Account reconciliation; improve reporting and financial data accuracy; procurement, logistics and documentation workflows. 2-7 years in process improvement, ERP, automation or AI roles; hands-on ERP (SAP, Oracle). Pay AED 7,000-15,000 per month. In person.",
+ "draft": null,
+ "draft_hash": null,
+ "enrichment": null,
+ "events": [
+  {
+   "data": "{\"track\": \"job\"}",
+   "kind": "created",
+   "ts": "2026-10-04T16:21:46+00:00"
+  }
+ ],
+ "fingerprint": "2a75117133db6c99df542ee875f5d8e5d267029e",
+ "id": "J-2a75117133",
+ "language": "en",
+ "location": "Dubai, UAE",
+ "org": "Integrated Plastics Packaging",
+ "posted_at": "2026-07-08",
+ "reject_reason": null,
+ "remote": 0,
+ "score": 61.6,
+ "score_breakdown": "{\"skills_fit\": 13.0, \"budget\": 6.1, \"seriousness\": 10.5, \"competition\": 6.0, \"speed\": 6.0, \"evidence_value\": 20}",
+ "score_reason": "قوية في قيمة الدليل/ملاءمة الدور والجدية (ناقصك شرط أساسي: flexible packaging)، وأضعف نقطة الميزانية؛ الشريحة: الخليج.",
+ "segment": "gulf",
+ "service": "ai_agents",
+ "sightings": [
+  {
+   "seen_at": "2026-10-04T16:21:46+00:00",
+   "source": "indeed",
+   "source_url": "https://to.indeed.com/aak9r99ffhvp"
+  }
+ ],
+ "status": "new",
+ "title": "ERP Automation Manager",
+ "track": "job",
+ "updated_at": "2026-10-04T16:25:14+00:00",
+ "url": "https://to.indeed.com/aak9r99ffhvp"
+}

@@ -1,0 +1,54 @@
+{
+ "approval": null,
+ "budget_max": null,
+ "budget_min": null,
+ "contact": null,
+ "created_at": "2026-10-04T16:21:46+00:00",
+ "currency": null,
+ "description": "Drive strategy, governance, execution and large-scale adoption of Agentic AI programs across business units; lead complex AI transformation initiatives; establish governance frameworks, KPIs, risk controls and reporting; business case development and financial tracking; change management, training and adoption; exposure to Agentic AI use cases across SAP, Salesforce, supply chain, finance, HR, operations and customer service. 12+ years of industry experience in enterprise program management, AI/ML and technology transformation. MBA preferred.",
+ "draft": null,
+ "draft_hash": "a9e970d17ba4374492cbf94a7974249d093d5455b626ffb95d892d2b1bad023f",
+ "enrichment": null,
+ "events": [
+  {
+   "data": "{\"track\": \"job\"}",
+   "kind": "created",
+   "ts": "2026-10-04T16:21:46+00:00"
+  },
+  {
+   "data": "{\"from\": \"new\", \"to\": \"studied\", \"note\": \"enriched\"}",
+   "kind": "status",
+   "ts": "2026-10-04T16:24:38+00:00"
+  },
+  {
+   "data": "{\"from\": \"studied\", \"to\": \"awaiting_approval\", \"note\": \"draft a9e970d17ba4\"}",
+   "kind": "status",
+   "ts": "2026-10-04T16:24:38+00:00"
+  }
+ ],
+ "fingerprint": "e5818c77096df362aa2051b761010ad6ac97f4fb",
+ "id": "J-e5818c7709",
+ "language": "en",
+ "location": "Cairo",
+ "org": "Capgemini",
+ "posted_at": "2026-05-21",
+ "reject_reason": null,
+ "remote": 0,
+ "score": 74.5,
+ "score_breakdown": "{\"skills_fit\": 25.0, \"budget\": 7.0, \"seriousness\": 10.5, \"competition\": 6.0, \"speed\": 6.0, \"evidence_value\": 20}",
+ "score_reason": "قوية في قيمة الدليل/ملاءمة الدور والتوافق مع مهاراتك (مالية، بيانات وتقارير، تصنيع، تدريب)، وأضعف نقطة الميزانية؛ الشريحة: تدريب الشركات.",
+ "segment": "ai_training",
+ "service": "business_system",
+ "sightings": [
+  {
+   "seen_at": "2026-10-04T16:21:46+00:00",
+   "source": "indeed",
+   "source_url": "https://to.indeed.com/aaysclnjqvhb"
+  }
+ ],
+ "status": "awaiting_approval",
+ "title": "AI Program Manager",
+ "track": "job",
+ "updated_at": "2026-10-04T16:25:14+00:00",
+ "url": "https://to.indeed.com/aaysclnjqvhb"
+}

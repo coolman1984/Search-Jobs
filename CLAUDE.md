@@ -20,6 +20,13 @@ solutions, write tailored drafts, and follow up until a contract. Quality over q
 7. Every run writes a short log in `logs/`; every system change gets an entry in `DEVELOPMENT_HISTORY.md` (what, why, lessons).
 8. Every run adds at least one idea of its own to `IDEAS.md`.
 
+## Engine (python3 -m engine …)
+Stdlib-only Python + SQLite (`data/`, cache) + JSON in `state/` (the record, committed; private fields stay out of git
+while the repository is public - see engine/privacy.py). Config in `config/*.toml`. Routines: `docs/ROUTINES.md`.
+Tests: `python3 -m unittest discover -s tests -t .` (offline, ~4 s). `.claude/settings.json` + `.claude/hooks/guard.py`
+deny e-mail sending and GitHub API writes, and block any write into `approvals/`.
+Never pass `trusted=`/`keyring=` to `engine.approval.verify` outside tests.
+
 ## Where things are
 `profile/` who he is, services, CVs · `portfolio/` public page and case studies · `market/` segments and prices ·
 `sources/` source register · `docs/` plan, routines, setup · `solutions/` one folder per pursued opportunity · `logs/` run logs.

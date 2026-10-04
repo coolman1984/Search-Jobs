@@ -1,0 +1,44 @@
+{
+ "approval": null,
+ "budget_max": null,
+ "budget_min": null,
+ "contact": null,
+ "created_at": "2026-10-04T16:21:46+00:00",
+ "currency": null,
+ "description": "",
+ "draft": null,
+ "draft_hash": null,
+ "enrichment": null,
+ "events": [
+  {
+   "data": "{\"track\": \"job\"}",
+   "kind": "created",
+   "ts": "2026-10-04T16:21:46+00:00"
+  }
+ ],
+ "fingerprint": "01fd0b8cd1fa8947c8a2a7a709869051a55c2f73",
+ "id": "J-01fd0b8cd1",
+ "language": "en",
+ "location": "Dubai, UAE",
+ "org": "MOOEi",
+ "posted_at": "2026-10-02",
+ "reject_reason": null,
+ "remote": 0,
+ "score": 36.0,
+ "score_breakdown": "{\"skills_fit\": 0.0, \"budget\": 7.0, \"seriousness\": 9.0, \"competition\": 6.0, \"speed\": 6.0, \"evidence_value\": 8.0}",
+ "score_reason": "قوية في الجدية وقلة المنافسة، وأضعف نقطة التوافق مع مهاراتك؛ الشريحة: الخليج.",
+ "segment": "gulf",
+ "service": "ai_agents",
+ "sightings": [
+  {
+   "seen_at": "2026-10-04T16:21:46+00:00",
+   "source": "indeed",
+   "source_url": "https://to.indeed.com/aanbvsgdy9rw"
+  }
+ ],
+ "status": "new",
+ "title": "AI Software Engineer-AI & Operations",
+ "track": "job",
+ "updated_at": "2026-10-04T16:25:14+00:00",
+ "url": "https://to.indeed.com/aanbvsgdy9rw"
+}

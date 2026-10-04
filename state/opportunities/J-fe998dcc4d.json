@@ -1,0 +1,44 @@
+{
+ "approval": null,
+ "budget_max": null,
+ "budget_min": null,
+ "contact": null,
+ "created_at": "2026-10-04T16:21:46+00:00",
+ "currency": null,
+ "description": "",
+ "draft": null,
+ "draft_hash": null,
+ "enrichment": null,
+ "events": [
+  {
+   "data": "{\"track\": \"job\"}",
+   "kind": "created",
+   "ts": "2026-10-04T16:21:46+00:00"
+  }
+ ],
+ "fingerprint": "fe998dcc4dd91cbc32f89a71aaf4b37bc1539124",
+ "id": "J-fe998dcc4d",
+ "language": "en",
+ "location": "New Cairo",
+ "org": "Siemens",
+ "posted_at": "2026-07-17",
+ "reject_reason": null,
+ "remote": 0,
+ "score": 49.5,
+ "score_breakdown": "{\"skills_fit\": 10.0, \"budget\": 7.0, \"seriousness\": 4.5, \"competition\": 6.0, \"speed\": 6.0, \"evidence_value\": 16.0}",
+ "score_reason": "قوية في قيمة الدليل/ملاءمة الدور وقلة المنافسة، وأضعف نقطة الجدية؛ الشريحة: عام.",
+ "segment": "other",
+ "service": "ai_agents",
+ "sightings": [
+  {
+   "seen_at": "2026-10-04T16:21:46+00:00",
+   "source": "indeed",
+   "source_url": "https://to.indeed.com/aaq7kk7kyzf9"
+  }
+ ],
+ "status": "new",
+ "title": "Senior Full Stack Engineer - AI & Automation",
+ "track": "job",
+ "updated_at": "2026-10-04T16:25:14+00:00",
+ "url": "https://to.indeed.com/aaq7kk7kyzf9"
+}

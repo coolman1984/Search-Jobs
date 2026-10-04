@@ -1,0 +1,49 @@
+{
+ "approval": null,
+ "budget_max": null,
+ "budget_min": null,
+ "contact": null,
+ "created_at": "2026-10-04T16:21:46+00:00",
+ "currency": null,
+ "description": "",
+ "draft": null,
+ "draft_hash": null,
+ "enrichment": null,
+ "events": [
+  {
+   "data": "{\"track\": \"job\"}",
+   "kind": "created",
+   "ts": "2026-10-04T16:21:46+00:00"
+  },
+  {
+   "data": "{\"from\": \"new\", \"to\": \"rejected\", \"note\": \"junior role (below the owner's level)\"}",
+   "kind": "status",
+   "ts": "2026-10-04T16:22:23+00:00"
+  }
+ ],
+ "fingerprint": "587295f74cedc4d28a2c1a17dfdd4bc70e359446",
+ "id": "J-587295f74c",
+ "language": "en",
+ "location": "Cairo",
+ "org": "Aleph Holding",
+ "posted_at": "2026-09-10",
+ "reject_reason": "junior role (below the owner's level)",
+ "remote": 0,
+ "score": 53.0,
+ "score_breakdown": "{\"skills_fit\": 20.0, \"budget\": 7.0, \"seriousness\": 6.0, \"competition\": 6.0, \"speed\": 6.0, \"evidence_value\": 8.0}",
+ "score_reason": "قوية في التوافق مع مهاراتك وقلة المنافسة (process_automation, finance)، وأضعف نقطة الجدية؛ الشريحة: other.",
+ "segment": "other",
+ "service": "ai_agents",
+ "sightings": [
+  {
+   "seen_at": "2026-10-04T16:21:46+00:00",
+   "source": "indeed",
+   "source_url": "https://to.indeed.com/aarn2zrtvlf2"
+  }
+ ],
+ "status": "rejected",
+ "title": "Finance Intern - Automation",
+ "track": "job",
+ "updated_at": "2026-10-04T16:22:23+00:00",
+ "url": "https://to.indeed.com/aarn2zrtvlf2"
+}
