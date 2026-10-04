@@ -1,0 +1,12 @@
+# runtime data — never commit while the repository is public
+data/
+*.db
+*.sqlite
+inbox/
+outbox/
+.env
+*.key
+__pycache__/
+*.pyc
+.venv/
+profile/PRIVATE_NOTES.md

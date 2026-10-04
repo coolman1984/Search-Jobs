@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>محمد فوزي لبيب · Mohamed Fawzy Labib</title>
+<meta name="description" content="محاسب تكاليف ومخطط مالي بيبني البرامج بنفسه: أتمتة الإكسل والتقارير، وكلاء ذكاء اصطناعي، أنظمة إدارة، وإعلانات موشن بالكود.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a ledger page — narrow reading column, evidence set as reconciled ledger lines (problem → solution → proof). */
+:root{
+  --paper:#f6f7f4; --ink:#14231f; --muted:#56665f; --rule:#d5dbd4; --card:#ffffff;
+  --accent:#0f6b52;       /* reconciled green */
+  --variance:#b2452e;     /* the "pain" red, used sparingly */
+  --display:"Readex Pro","IBM Plex Sans Arabic",system-ui,sans-serif;
+  --body:"IBM Plex Sans Arabic","Readex Pro",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0f1715;--ink:#e6ece8;--muted:#9fb0a8;--rule:#26332f;--card:#152019;--accent:#4fc39c;--variance:#e98a72;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#0f1715;--ink:#e6ece8;--muted:#9fb0a8;--rule:#26332f;--card:#152019;--accent:#4fc39c;--variance:#e98a72;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.75 var(--body);padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:860px;margin-inline:auto}
+header.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:20px;border-bottom:1px solid var(--rule);flex-wrap:wrap}
+.mark{font:600 .95rem var(--display);letter-spacing:.02em}
+.lang{font:500 .85rem var(--mono);background:none;border:1px solid var(--rule);color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer}
+.lang:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.hero{padding-block:56px 40px}
+.hero h1{font:700 clamp(1.9rem,5vw,3rem)/1.25 var(--display);margin:0 0 16px;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{max-width:62ch;color:var(--muted);margin:0 0 24px;font-size:1.125rem}
+.facts{display:flex;flex-wrap:wrap;gap:8px 20px;font:500 .9rem var(--mono);color:var(--muted)}
+.facts b{color:var(--ink);font-weight:500}
+h2{font:600 1.35rem var(--display);margin:56px 0 8px}
+.lead{color:var(--muted);margin:0 0 24px;max-width:62ch}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.svc{padding:18px;border:1px solid var(--rule);border-radius:10px;background:var(--card);min-width:0}
+.svc h3{font:600 1.05rem var(--display);margin:0 0 6px}
+.svc p{margin:0;color:var(--muted);font-size:.95rem;line-height:1.65}
+.ledger{border-top:2px solid var(--ink)}
+.line{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) minmax(0,1fr);gap:16px;padding-block:18px;border-bottom:1px solid var(--rule)}
+.line .name{font:600 1rem var(--display)}
+.line .name a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+.line .name a:hover{border-color:var(--accent)}
+.line .pain{color:var(--variance);font-size:.92rem;margin-top:4px}
+.line .what{font-size:.95rem;min-width:0}
+.line .proof{font:500 .85rem/1.6 var(--mono);color:var(--accent);min-width:0}
+.line .proof::before{content:"✓ "}
+.colhead{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) minmax(0,1fr);gap:16px;font:500 .75rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-block:8px}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;counter-reset:s}
+.step{border-top:2px solid var(--accent);padding-top:12px;min-width:0}
+.step::before{counter-increment:s;content:counter(s);font:600 .85rem var(--mono);color:var(--accent)}
+.step p{margin:4px 0 0;font-size:.95rem}
+.note{font-size:.88rem;color:var(--muted);border-inline-start:3px solid var(--rule);padding-inline-start:12px;margin-top:24px}
+.contact{margin-top:56px;padding:24px;border:1px solid var(--rule);border-radius:12px;background:var(--card)}
+.contact h2{margin-top:0}
+.contact code{font:500 .95rem var(--mono);user-select:all}
+[data-l]{display:none}
+html[lang="ar"] [data-l="ar"],html[lang="en"] [data-l="en"]{display:revert}
+@media (max-width:640px){.line,.colhead{grid-template-columns:1fr;gap:4px}.colhead{display:none}}
+@media (prefers-reduced-motion:no-preference){.svc{transition:border-color .2s}.svc:hover{border-color:var(--accent)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <span class="mark"><span data-l="ar">محمد فوزي لبيب</span><span data-l="en">Mohamed Fawzy Labib</span></span>
+  <button class="lang" id="langBtn" type="button" aria-label="Switch language">English</button>
+</header>
+
+<section class="hero">
+  <h1 data-l="ar">محاسب تكاليف <em>بيبني البرامج بنفسه</em></h1>
+  <h1 data-l="en">A finance professional <em>who builds the software himself</em></h1>
+  <p data-l="ar">14+ سنة في الرقابة المالية والتكاليف داخل مصنع عالمي. بحوّل الشغل اليدوي المتكرر لأدوات بتشتغل لوحدها وبتثبت إن أرقامها صح: أتمتة إكسل وتقارير، وكلاء ذكاء اصطناعي بموافقتك، أنظمة إدارة بالعربي، وإعلانات موشن بالكود.</p>
+  <p data-l="en">14+ years in finance and cost control inside a multinational manufacturer. I turn repetitive manual work into tools that run themselves and prove their numbers: Excel and report automation, AI agents that ask before acting, bilingual business systems, and motion ads made in code.</p>
+  <div class="facts">
+    <span><b>14+</b> <span data-l="ar">سنة مالية وتشغيل</span><span data-l="en">years finance &amp; ops</span></span>
+    <span><b>AR · EN</b></span>
+    <span><b>SAP FI · FP&amp;A</b></span>
+    <span><b>Python · TypeScript · SQLite</b></span>
+  </div>
+</section>
+
+<h2><span data-l="ar">بقدّم إيه</span><span data-l="en">What I do</span></h2>
+<div class="services">
+  <div class="svc"><h3 data-l="ar">أتمتة الإكسل والتقارير</h3><h3 data-l="en">Excel &amp; report automation</h3><p data-l="ar">تقرير بضغطة START، والإجماليات بتتطابق لوحدها.</p><p data-l="en">One click on START; totals reconcile themselves.</p></div>
+  <div class="svc"><h3 data-l="ar">وكلاء ذكاء اصطناعي</h3><h3 data-l="en">AI agents</h3><p data-l="ar">بينفذوا الشغل المتكرر، وأي خطوة حساسة بتستنى موافقتك.</p><p data-l="en">They do the repetitive work and wait for your approval on anything sensitive.</p></div>
+  <div class="svc"><h3 data-l="ar">أنظمة إدارة للنشاط</h3><h3 data-l="en">Business systems</h3><p data-l="ar">حجز ومتابعة وتحصيل وتقارير، ولينك موبايل للعميل.</p><p data-l="en">Booking, tracking, collections, reports, and a mobile link for your customers.</p></div>
+  <div class="svc"><h3 data-l="ar">لوحات متابعة</h3><h3 data-l="en">Dashboards</h3><p data-l="ar">مصدر واحد للحقيقة لأرقام المالية والتشغيل.</p><p data-l="en">One trusted source for finance and operations KPIs.</p></div>
+  <div class="svc"><h3 data-l="ar">إعلانات موشن بالكود</h3><h3 data-l="en">Motion ads in code</h3><p data-l="ar">15–60 ثانية، موسيقى أصلية، وكتابة عربي سليمة.</p><p data-l="en">15–60 s, original score, correct Arabic typography.</p></div>
+</div>
+
+<h2><span data-l="ar">الشغل نفسه</span><span data-l="en">The work</span></h2>
+<p class="lead" data-l="ar">كل سطر هنا مشروع عام تقدر تفتحه وتشوف الكود بتاعه. الدليل هو الكود والاختبارات، مش الكلام.</p>
+<p class="lead" data-l="en">Every line is a public project you can open. The proof is the code and its tests, not adjectives.</p>
+<div class="colhead"><span data-l="ar">المشروع والوجع</span><span data-l="en">Project &amp; pain</span><span data-l="ar">الحل</span><span data-l="en">Solution</span><span data-l="ar">الدليل</span><span data-l="en">Proof</span></div>
+<div class="ledger">
+  <div class="line"><div><div class="name"><a href="https://github.com/coolman1984/Office-Automation">xl2ai</a></div><div class="pain" data-l="ar">إكسل ضخم الذكاء الاصطناعي مش قادر يقراه</div><div class="pain" data-l="en">Huge Excel files AI can't read</div></div>
+    <div class="what" data-l="ar">الإكسل بيتحول لقاعدة بيانات متحقق منها، ومؤشرات، وأدوات استعلام آمنة</div><div class="what" data-l="en">Excel → verified database → KPIs and safe query tools</div>
+    <div class="proof" data-l="ar">مليون صف في ~55 ث مع التحقق الكامل</div><div class="proof" data-l="en">1M rows in ~55 s, fully verified</div></div>
+  <div class="line"><div><div class="name"><a href="https://github.com/coolman1984/Perfect-Project-Template">Excel Automation Engine</a></div><div class="pain" data-l="ar">كل قسم بيتعمله برنامج من الصفر</div><div class="pain" data-l="en">Every department rebuilt from scratch</div></div>
+    <div class="what" data-l="ar">محرك واحد يتكيّف لكل قسم: فك الضغط واضغط START</div><div class="what" data-l="en">One engine adapted per department: extract, START, use</div>
+    <div class="proof">450+ tests</div></div>
+  <div class="line"><div><div class="name"><a href="https://github.com/coolman1984/Delivery-Manager">Delivery Platform</a></div><div class="pain" data-l="ar">طلبات بالتليفون وتحصيل بالورقة</div><div class="pain" data-l="en">Phone orders, paper settlements</div></div>
+    <div class="what" data-l="ar">عميل، ومحل، وطيار، وتشغيل، ومالك… وكل شركة بياناتها معزولة</div><div class="what" data-l="en">Customer, store, rider, ops, owner; isolated data per company</div>
+    <div class="proof" data-l="ar">~107 اختبار · تسوية يومية</div><div class="proof" data-l="en">~107 tests · daily settlement</div></div>
+  <div class="line"><div><div class="name"><a href="https://github.com/coolman1984/Accounting-sys">Mizan · ميزان</a></div><div class="pain" data-l="ar">محاسبة الشركات الصغيرة على الورق</div><div class="pain" data-l="en">Small-business books on paper</div></div>
+    <div class="what" data-l="ar">قيد مزدوج ومخازن وتكاليف، بالعربي والإنجليزي، على شبكة الشركة</div><div class="what" data-l="en">Double-entry, stock and costing; bilingual, on the local network</div>
+    <div class="proof">~220 tests</div></div>
+  <div class="line"><div><div class="name"><a href="https://github.com/coolman1984/win-agent-desktop">wad</a></div><div class="pain" data-l="ar">وكلاء بيضغطوا غلط من غير ما حد يحس</div><div class="pain" data-l="en">Agents that fail silently</div></div>
+    <div class="what" data-l="ar">أتمتة ويندوز من شجرة الوصول، وكل خطوة بتتثبت</div><div class="what" data-l="en">Windows automation via accessibility tree; every action proven</div>
+    <div class="proof" data-l="ar">إثبات لكل إجراء</div><div class="proof" data-l="en">Proof per action</div></div>
+  <div class="line"><div><div class="name"><a href="https://github.com/coolman1984/3D-Modeling">Space Planner</a></div><div class="pain" data-l="ar">تصرف على المكان وبعدين تكتشف إن الحاجة مش داخلة</div><div class="pain" data-l="en">Spend first, discover it doesn't fit</div></div>
+    <div class="what" data-l="ar">تخطيط ثنائي وثلاثي الأبعاد مع فحوص ملاءمة</div><div class="what" data-l="en">2D/3D layout planning with fit checks</div>
+    <div class="proof">~440 tests</div></div>
+  <div class="line"><div><div class="name"><a href="https://github.com/coolman1984/Animation">Code Film Studio</a></div><div class="pain" data-l="ar">الإعلان غالي والتعديل مكلف</div><div class="pain" data-l="en">Ads are slow and costly to change</div></div>
+    <div class="what" data-l="ar">أفلام بالكود بموسيقى أصلية وفحوص جودة آلية</div><div class="what" data-l="en">Films made in code with original score and automated QC</div>
+    <div class="proof" data-l="ar">Reels 9:16 و16:9 متسلّمة</div><div class="proof" data-l="en">Delivered Reels 9:16 &amp; 16:9</div></div>
+</div>
+<p class="note" data-l="ar">الأرقام اللي فوق جاية من المستودعات نفسها (عدد الاختبارات وقياسات الأداء). وأي نتيجة لعميل هتتضاف هنا بس بموافقته.</p>
+<p class="note" data-l="en">Figures above come from the repositories themselves (test counts, measured performance). Client results will be added only with the client's permission.</p>
+
+<h2><span data-l="ar">بنشتغل إزاي</span><span data-l="en">How we work</span></h2>
+<div class="how">
+  <div class="step"><p data-l="ar">مكالمة 20 دقيقة ببلاش</p><p data-l="en">Free 20-minute call</p></div>
+  <div class="step"><p data-l="ar">عرض مكتوب بسعر ثابت</p><p data-l="en">Written fixed-price scope</p></div>
+  <div class="step"><p data-l="ar">نسخة أولى تجربها في أيام</p><p data-l="en">First working version in days</p></div>
+  <div class="step"><p data-l="ar">جولتين تعديل، وبعدين التسليم مع الدليل</p><p data-l="en">Two revisions, handover with a guide</p></div>
+</div>
+
+<section class="contact">
+  <h2><span data-l="ar">احكيلي عن الشغل اللي بيتكرر عندك</span><span data-l="en">Tell me which task you repeat every week</span></h2>
+  <p data-l="ar">هرد عليك بخطة قصيرة وسعر ثابت.</p><p data-l="en">I'll reply with a short plan and a fixed price.</p>
+  <p>GitHub: <code>github.com/coolman1984</code></p>
+  <p data-l="ar">البريد المهني: <code>[يتضاف بعد موافقتك]</code></p><p data-l="en">Email: <code>[added after approval]</code></p>
+</section>
+</div>
+<script>
+(function(){
+  var html=document.documentElement, btn=document.getElementById('langBtn');
+  function set(l){html.lang=l;html.dir=l==='ar'?'rtl':'ltr';btn.textContent=l==='ar'?'English':'عربي';try{localStorage.setItem('lang',l)}catch(e){}}
+  var saved=null;try{saved=localStorage.getItem('lang')}catch(e){}
+  if(saved==='en'||saved==='ar')set(saved);
+  btn.addEventListener('click',function(){set(html.lang==='ar'?'en':'ar')});
+})();
+</script>
+</body>
+</html>
