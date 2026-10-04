@@ -176,6 +176,11 @@ class NoSendPathTests(unittest.TestCase):
         for path, text in self.engine_sources().items():
             self.assertNotRegex(text, r"smtplib|sendmail|send_message\(|\.send\(", f"{path.name} contains a send path")
 
+    def test_no_code_talks_to_whatsapp_or_messaging_apis(self):
+        for path, text in self.engine_sources().items():
+            self.assertNotRegex(text, r"graph\.facebook\.com|api\.whatsapp|twilio|wa\.me/send|web\.whatsapp",
+                                f"{path.name} reaches a messaging API")
+
     def test_project_settings_deny_send_and_api_write_tools(self):
         settings = json.loads((REPO / ".claude" / "settings.json").read_text())
         deny = set(settings["permissions"]["deny"])

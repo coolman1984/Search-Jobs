@@ -17,8 +17,11 @@ solutions, write tailored drafts, and follow up until a contract. Quality over q
 5. Personal data: only business contact details published publicly for business. Never sell or share data.
 6. Never mention the owner's current employer or its systems in any client-facing text without his approval. Never use an
    excluded repository (PROFILE.md §4c) as evidence. Reject opportunities from the employer, its competitors or suppliers.
-7. Every run writes a short log in `logs/`; every system change gets an entry in `DEVELOPMENT_HISTORY.md` (what, why, lessons).
-8. Every run adds at least one idea of its own to `IDEAS.md`.
+7. WhatsApp: the owner's number appears only as a wa.me click-to-chat link in his own materials. This system never sends
+   or automates WhatsApp messages (business-initiated messages need the person's prior opt-in). Use a separate business
+   number, never the personal one, for any future WhatsApp Cloud API setup.
+8. Every run writes a short log in `logs/`; every system change gets an entry in `DEVELOPMENT_HISTORY.md` (what, why, lessons).
+9. Every run adds at least one idea of its own to `IDEAS.md`.
 
 ## Engine (python3 -m engine …)
 Stdlib-only Python + SQLite (`data/`, cache) + JSON in `state/` (the record, committed; private fields stay out of git

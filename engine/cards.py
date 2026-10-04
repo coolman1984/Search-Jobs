@@ -149,6 +149,17 @@ def draft_hash(draft: dict) -> str:
     return hashlib.sha256(canon.encode("utf-8")).hexdigest()
 
 
+def signature(cfg: Config, lang: str, repo: str) -> str:
+    """Name, then one contact line. Links only (wa.me, facebook), so no phone digits appear as prose claims."""
+    c = cfg.settings.get("contact", {})
+    parts = [p for p in (c.get("business_email"),
+                         f"wa.me/{c['whatsapp']}" if c.get("whatsapp") else None,
+                         c.get("facebook_page") or None,
+                         f"github.com/coolman1984/{repo}") if p]
+    name = "محمد فوزي لبيب" if lang == "ar" else "Mohamed Fawzy Labib"
+    return name + "\n" + " · ".join(parts)
+
+
 def baseline_draft(cfg: Config, opp: dict) -> dict:
     ev = pick_evidence(cfg, opp)
     lang = "ar" if opp.get("language") == "ar" else "en"
@@ -161,7 +172,7 @@ def baseline_draft(cfg: Config, opp: dict) -> dict:
             f"لحالتكم أقترح {SERVICE_AR[opp.get('service') or 'business_system']}، ونسخة أولى تجربوها خلال {svc['duration']}.",
             "ينفع مكالمة 20 دقيقة الأسبوع ده؟ أقدر أوريكم مثال شغال الأول.",
             "لو الموضوع مش مناسب، رد بكلمة «لا» ومش هبعت تاني." if opp["track"] == "direct" else "",
-            f"محمد فوزي لبيب\ngithub.com/coolman1984/{ev['repo']}",
+            signature(cfg, "ar", ev["repo"]),
         ]))
         subject = f"بخصوص: {opp['title'][:80]}"
     else:
@@ -173,7 +184,7 @@ def baseline_draft(cfg: Config, opp: dict) -> dict:
             f"For your case I would build {SERVICE_EN[opp.get('service') or 'business_system']}, with a first version you can try within {svc['duration']}.",
             "Would a 20-minute call this week work? I can show a working example first.",
             "If this is not relevant, reply \"stop\" and I won't contact you again." if opp["track"] == "direct" else "",
-            f"Mohamed Fawzy Labib\ngithub.com/coolman1984/{ev['repo']}",
+            signature(cfg, "en", ev["repo"]),
         ]))
         subject = f"Re: {opp['title'][:80]}"
     contact = json.loads(opp["contact"]) if opp.get("contact") else {}

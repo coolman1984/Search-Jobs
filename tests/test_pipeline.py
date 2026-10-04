@@ -203,6 +203,17 @@ class ClaimsAndDraftTests(unittest.TestCase):
         self.assertEqual(claims.check(self.cfg, ar, d_ar["body"],
                                       extra_allowed=[self.cfg.evidence["services"][ar["service"]]["duration"]]), [])
 
+    def test_signature_carries_contact_links_and_still_passes(self):
+        self.cfg.settings["contact"]["whatsapp"] = "201001234567"
+        self.cfg.settings["contact"]["facebook_page"] = "https://www.facebook.com/example.page"
+        d = cards.baseline_draft(self.cfg, self.opp)
+        self.assertIn("wa.me/201001234567", d["body"])
+        self.assertIn("mflma2030@gmail.com", d["body"])
+        self.assertEqual(claims.check(self.cfg, self.opp, d["body"],
+                                      extra_allowed=[self.cfg.evidence["services"][self.opp["service"]]["duration"]]), [])
+        # a phone number written as plain prose is still treated as an unbacked number
+        self.assertTrue(claims.check(self.cfg, self.opp, "Your reports are slow.\n\nCall me on 01001234567."))
+
     def test_invented_claims_are_refused(self):
         bad = ("You need faster reports.\n\nI have delivered 40 projects for hundreds of clients and I guarantee results. "
                "See github.com/coolman1984/opening-nerp-tcode")

@@ -13,6 +13,15 @@ languages = ["ar", "en"]
 # Countries where an on-site/hybrid job is acceptable (ISO codes). Remote is always acceptable.
 job_countries = ["EG", "SA", "AE", "QA", "KW", "BH", "OM"]
 
+# Business contact details that may appear in drafts and on the portfolio (public by design).
+# WhatsApp is used ONLY as a click-to-chat link (wa.me) that the client chooses to open. The system never sends
+# WhatsApp messages: business-initiated WhatsApp messages need the person's prior opt-in (sources/SOURCES.md).
+[contact]
+business_email = "mflma2030@gmail.com"
+whatsapp = ""            # international format without + or spaces, e.g. "2010xxxxxxxx"; empty = not shown
+facebook_page = ""       # full URL of the Pixel Plus page; empty = not shown
+brand = "Pixel Plus"
+
 [repository]
 owner = "coolman1984"
 name = "Search-Jobs"

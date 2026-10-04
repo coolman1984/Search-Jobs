@@ -17,7 +17,7 @@ from .scoring import _ngrams
 
 _DIGITS = str.maketrans("٠١٢٣٤٥٦٧٨٩۰۱۲۳۴۵۶۷۸۹", "01234567890123456789")
 _NUM = re.compile(r"\d[\d,.]*")
-_LINK = re.compile(r"(https?://|www\.|github\.com/)\S+|\S+@\S+\.\w+", re.I)
+_LINK = re.compile(r"(https?://|www\.|github\.com/|wa\.me/|facebook\.com/|fb\.com/)\S+|\S+@\S+\.\w+", re.I)
 _REPO_LINK = re.compile(r"github\.com/coolman1984/([A-Za-z0-9_.\-]+)", re.I)
 BOASTS = ["hundreds of clients", "many clients", "dozens of clients", "satisfied clients", "guarantee", "guaranteed",
           "100% success", "top rated", "top-rated", "award-winning", "world-class", "best in the market",
